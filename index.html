@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PixelMind AI – Generate Stunning Images with AI</title>
+  <meta name="description" content="Generate stunning AI images from text prompts using Google Gemini. Fast, free, and professional.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+      <link rel="shortcut icon" type="image/ico" href="https://ts-developers.com/img/icon/logo.png" />
+
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar-custom">
+  <div class="container d-flex align-items-center justify-content-between">
+    <a href="index.html" class="navbar-brand-custom">
+      <div class="profile_circle">
+                <img src="https://ts-developers.com/storage/user/profile_photos/1773334193_69b2eeb1ac4c2.jpg" alt="profile-image" class="img-fluid" />
+            </div>
+            
+    </a>
+    <button class="navbar-toggler-custom d-lg-none">☰</button>
+    <ul class="navbar-menu d-none d-lg-flex gap-1">
+      <li><a href="index.html" class="nav-link-custom active">Home</a></li>
+      <li><a href="generate.html" class="nav-link-custom">Generate</a></li>
+      <li><a href="gallery.html" class="nav-link-custom">Gallery</a></li>
+      <li><a href="about.html" class="nav-link-custom">About</a></li>
+      <li><a href="contact.html" class="nav-link-custom">Contact</a></li>
+      <li><a href="dashboard.html" class="nav-link-custom">Dashboard</a></li>
+    </ul>
+    <div class="d-flex align-items-center gap-2">
+      <button class="dark-toggle"></button>
+      <a href="login.html" class="btn-outline-custom d-none d-md-inline-flex" style="padding:8px 20px;font-size:.85rem">Login</a>
+      <a href="signup.html" class="btn-primary-custom ripple d-none d-md-inline-flex" style="padding:8px 20px;font-size:.85rem"><span>Sign Up</span></a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero-section">
+  <div class="hero-bg"></div>
+  <div class="hero-grid-bg"></div>
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6 hero-content">
+        <div class="hero-badge">✦ Powered by Google Gemini AI</div>
+        <h1 class="hero-title">Create <span class="gradient-text">Stunning AI Images</span> From Text</h1>
+        <p class="hero-desc">Transform your imagination into breathtaking visuals. Just describe what you envision — our AI brings it to life in seconds using Google Gemini.</p>
+        <div class="hero-buttons">
+          <a href="generate.html" class="btn-primary-custom ripple"><span>✦</span><span>Start Generating</span></a>
+          <a href="gallery.html" class="btn-outline-custom"><span>🖼</span><span>View Gallery</span></a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><h3>50K+</h3><p>Images Generated</p></div>
+          <div class="hero-stat"><h3>10K+</h3><p>Happy Users</p></div>
+          <div class="hero-stat"><h3>4.9★</h3><p>User Rating</p></div>
+        </div>
+      </div>
+      <div class="col-lg-6 mt-4 mt-lg-0">
+        <div class="hero-image-wrapper">
+          <div class="hero-main-img d-flex align-items-center justify-content-center flex-column gap-3 p-5" style="background:var(--bg2);min-height:400px">
+            <div style="font-size:5rem;animation:float 3s ease-in-out infinite">🎨</div>
+            <div class="text-center">
+              <div style="font-size:1.1rem;font-weight:700;margin-bottom:6px">AI Image Generation</div>
+              <div style="font-size:.85rem;color:var(--text-muted)">Type a prompt → Get stunning images instantly</div>
+            </div>
+            <div style="background:var(--bg3);border:1px solid var(--glass-border);border-radius:50px;padding:10px 20px;font-size:.78rem;color:var(--text-muted);width:100%;max-width:320px;display:flex;align-items:center;gap:8px">
+              <span>✦</span><span>"A futuristic city at sunset, cyberpunk style..."</span>
+            </div>
+          </div>
+          <div class="hero-float-card card1"><div class="float-icon">⚡</div><div><div style="font-size:.72rem;font-weight:700">Ultra Fast</div><div style="font-size:.68rem;color:var(--text-muted)">~3 seconds</div></div></div>
+          <div class="hero-float-card card2"><div class="float-icon">🌟</div><div><div style="font-size:.72rem;font-weight:700">HD Quality</div><div style="font-size:.68rem;color:var(--text-muted)">Stunning Detail</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features-section" id="features">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-tag">✦ Why PixelMind</div>
+      <h2 class="section-title">Everything You Need to <span class="gradient-text">Create</span></h2>
+      <p class="section-subtitle">Professional AI image generation with powerful features — completely free.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3 reveal">
+        <div class="glass-card feature-card h-100">
+          <div class="feature-icon">🤖</div>
+          <h4>Gemini AI Powered</h4>
+          <p>Using Google's most advanced Gemini model for photorealistic, creative image generation from any text prompt.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 reveal">
+        <div class="glass-card feature-card h-100">
+          <div class="feature-icon">⚡</div>
+          <h4>Lightning Fast</h4>
+          <p>Generate high-quality images in seconds. No waiting, no queues — instant results every time.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 reveal">
+        <div class="glass-card feature-card h-100">
+          <div class="feature-icon">🎨</div>
+          <h4>8 Art Styles</h4>
+          <p>Realistic, Anime, 3D, Digital Art, Oil Painting, Watercolor, Sketch, Cyberpunk — all available free.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 reveal">
+        <div class="glass-card feature-card h-100">
+          <div class="feature-icon">⬇️</div>
+          <h4>Free Download</h4>
+          <p>One-click HD download in PNG format. Save to history, share instantly — no watermarks, ever.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section" id="how-it-works">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-tag">✦ Simple Process</div>
+      <h2 class="section-title">How It <span class="gradient-text">Works</span></h2>
+      <p class="section-subtitle">Create stunning AI images in 3 simple steps — no account needed.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4 reveal">
+        <div class="glass-card step-card h-100">
+          <div class="step-number">1</div>
+          <h4>Add Your API Key</h4>
+          <p style="color:var(--text-muted);font-size:.9rem;line-height:1.65">Get a free Gemini API key from Google AI Studio and paste it in the Generate page. Your key stays in your browser only.</p>
+        </div>
+      </div>
+      <div class="col-md-4 reveal">
+        <div class="glass-card step-card h-100">
+          <div class="step-number">2</div>
+          <h4>Write Your Prompt</h4>
+          <p style="color:var(--text-muted);font-size:.9rem;line-height:1.65">Describe the image you want in detail. Choose a style — Realistic, Anime, 3D, and more. Hit Generate!</p>
+        </div>
+      </div>
+      <div class="col-md-4 reveal">
+        <div class="glass-card step-card h-100">
+          <div class="step-number">3</div>
+          <h4>Download & Share</h4>
+          <p style="color:var(--text-muted);font-size:.9rem;line-height:1.65">Your image appears instantly. Download in HD, save to gallery, regenerate, or copy the prompt.</p>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-5 reveal">
+      <div style="background:rgba(255,193,7,.08);border:1px solid rgba(255,193,7,.25);border-radius:12px;padding:16px 24px;display:inline-block;font-size:.85rem;color:#FBBF24;max-width:600px">
+        ⚠️ <strong>API Quota Note:</strong> You can generate images based on your own Gemini API quota. Free Gemini API allows up to <strong>~15 images/minute</strong>. No payment required from PixelMind.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEMO IMAGES -->
+<section class="demo-section" id="demo">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-tag">✦ Sample Creations</div>
+      <h2 class="section-title">See What's <span class="gradient-text">Possible</span></h2>
+      <p class="section-subtitle">Examples of what PixelMind AI can create for you.</p>
+    </div>
+    <div class="demo-grid">
+      <div class="demo-img-card reveal"><div class="demo-placeholder"><div class="ph-icon">🌆</div><div>Futuristic City</div></div><div class="demo-img-overlay"><span>Futuristic cyberpunk cityscape at night</span></div></div>
+      <div class="demo-img-card reveal"><div class="demo-placeholder"><div class="ph-icon">🐉</div><div>Fantasy Dragon</div></div><div class="demo-img-overlay"><span>Epic fantasy dragon in mountains</span></div></div>
+      <div class="demo-img-card reveal"><div class="demo-placeholder"><div class="ph-icon">🌸</div><div>Anime Portrait</div></div><div class="demo-img-overlay"><span>Anime girl in cherry blossom</span></div></div>
+      <div class="demo-img-card reveal"><div class="demo-placeholder"><div class="ph-icon">🚀</div><div>Space Explorer</div></div><div class="demo-img-overlay"><span>Astronaut exploring colorful nebula</span></div></div>
+      <div class="demo-img-card reveal"><div class="demo-placeholder"><div class="ph-icon">🏔️</div><div>Mountain Sunset</div></div><div class="demo-img-overlay"><span>Golden hour mountain landscape</span></div></div>
+      <div class="demo-img-card reveal"><div class="demo-placeholder"><div class="ph-icon">🤖</div><div>Cyberpunk Robot</div></div><div class="demo-img-overlay"><span>Cyberpunk android in neon city</span></div></div>
+      <div class="demo-img-card reveal"><div class="demo-placeholder"><div class="ph-icon">🧙</div><div>Magic Wizard</div></div><div class="demo-img-overlay"><span>Ancient wizard casting spells</span></div></div>
+      <div class="demo-img-card reveal"><div class="demo-placeholder"><div class="ph-icon">🌊</div><div>Ocean Storm</div></div><div class="demo-img-overlay"><span>Dramatic stormy ocean waves</span></div></div>
+    </div>
+    <div class="text-center mt-5 reveal">
+      <a href="generate.html" class="btn-primary-custom ripple"><span>✦</span><span>Generate Your Own</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-tag">✦ User Reviews</div>
+      <h2 class="section-title">What Our <span class="gradient-text">Users Say</span></h2>
+      <p class="section-subtitle">Join thousands of creators using PixelMind AI.</p>
+    </div>
+    <div class="testimonial-slider reveal">
+      <div class="testimonial-track">
+        <div class="glass-card testimonial-card"><div class="stars">★★★★★</div><p class="testimonial-text">PixelMind is incredible! The image quality is unmatched and it's completely free. I use it every day for my design work.</p><div class="testimonial-author"><div class="author-avatar">A</div><div><p class="author-name">Ahmed Khan</p><p class="author-role">Graphic Designer</p></div></div></div>
+        <div class="glass-card testimonial-card"><div class="stars">★★★★★</div><p class="testimonial-text">As a content creator I need fresh visuals daily. PixelMind saves me hours. The AI understands my prompts perfectly!</p><div class="testimonial-author"><div class="author-avatar">S</div><div><p class="author-name">Sara Johnson</p><p class="author-role">Content Creator</p></div></div></div>
+        <div class="glass-card testimonial-card"><div class="stars">★★★★★</div><p class="testimonial-text">Best AI image generator I've tried. Clean interface, blazing fast, beautiful results. The anime style is phenomenal!</p><div class="testimonial-author"><div class="author-avatar">M</div><div><p class="author-name">Marco Rivera</p><p class="author-role">Digital Artist</p></div></div></div>
+        <div class="glass-card testimonial-card"><div class="stars">★★★★★</div><p class="testimonial-text">Using my own Gemini API key gives me full control. No limits imposed by the platform — just pure generation freedom!</p><div class="testimonial-author"><div class="author-avatar">L</div><div><p class="author-name">Lisa Chen</p><p class="author-role">UI/UX Designer</p></div></div></div>
+      </div>
+    </div>
+    <div class="slider-controls">
+      <button class="slider-btn slider-prev">‹</button>
+      <div class="slider-dots"><div class="slider-dot active"></div><div class="slider-dot"></div><div class="slider-dot"></div><div class="slider-dot"></div></div>
+      <button class="slider-btn slider-next">›</button>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-tag">✦ FAQ</div>
+      <h2 class="section-title">Frequently Asked <span class="gradient-text">Questions</span></h2>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="faq-item open reveal"><div class="faq-question">Is PixelMind AI completely free? <span class="faq-icon">+</span></div><div class="faq-answer">Yes! PixelMind AI is 100% free. You use your own Google Gemini API key which has a generous free quota. No payment to us ever. Google's free tier allows up to 15 requests/minute.</div></div>
+        <div class="faq-item reveal"><div class="faq-question">How do I get a Gemini API key? <span class="faq-icon">+</span></div><div class="faq-answer">Go to Google AI Studio (aistudio.google.com), sign in with your Google account, click "Get API Key", create a new key, and copy it. Paste it in the Generate page. It's completely free!</div></div>
+        <div class="faq-item reveal"><div class="faq-question">Is my API key safe? <span class="faq-icon">+</span></div><div class="faq-answer">Yes! Your API key is stored only in your browser's localStorage. It never leaves your device or gets sent to our servers. PixelMind calls the Gemini API directly from your browser.</div></div>
+        <div class="faq-item reveal"><div class="faq-question">How many images can I generate? <span class="faq-icon">+</span></div><div class="faq-answer">The number depends on your Gemini API quota. Google's free tier allows up to 15 images per minute and 1500 per day. Premium Google accounts have higher limits. PixelMind itself imposes no limits.</div></div>
+        <div class="faq-item reveal"><div class="faq-question">What image styles are available? <span class="faq-icon">+</span></div><div class="faq-answer">We offer 8 styles: Realistic/Photorealistic, Anime/Manga, 3D Render, Digital Art, Oil Painting, Watercolor, Pencil Sketch, and Cyberpunk. All are free!</div></div>
+        <div class="faq-item reveal"><div class="faq-question">Can I use generated images commercially? <span class="faq-icon">+</span></div><div class="faq-answer">Images are generated by Google Gemini API. Please review Google's Gemini API Terms of Service for commercial usage rights. Generally, images you generate can be used for most purposes.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter-section">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="section-tag">✦ Newsletter</div>
+      <h2 class="section-title" style="font-size:1.8rem">Get <span class="gradient-text">AI Prompt Tips</span> & Updates</h2>
+      <p class="section-subtitle" style="margin-bottom:24px">Join 5,000+ creators. Weekly prompt ideas and feature updates.</p>
+      <form class="newsletter-form">
+        <input type="email" class="newsletter-input" placeholder="Enter your email..." required>
+        <button type="submit" class="btn-primary-custom ripple"><span>Subscribe</span></button>
+      </form>
+      <p style="font-size:.75rem;color:var(--text-muted);margin-top:12px">No spam. Unsubscribe anytime.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6">
+        <div class="footer-brand"><div class="logo-icon" style="width:28px;height:28px;font-size:.85rem">✦</div><span class="gradient-text">PixelMind AI</span></div>
+        <p class="footer-desc">Free AI image generator powered by Google Gemini. Use your own API key — no payment ever.</p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/tsdeveloper1" class="social-btn" title="facebook">📘</a>
+          <a href="https://pk.linkedin.com/in/ts-developers" class="social-btn" title="linkdin">💼</a>
+          <a href="https://www.youtube.com/@TS-Developers-g3y" class="social-btn" title="youtube">▶</a>
+          <a href="https://tiktok.com/tsdevelopersoffical" class="social-btn" title="tik tok">🎵</a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-3 col-6">
+        <div class="footer-heading">Product</div>
+        <a href="generate.html" class="footer-link">Generate</a>
+        <a href="gallery.html" class="footer-link">Gallery</a>
+        <a href="dashboard.html" class="footer-link">Dashboard</a>
+      </div>
+      <div class="col-lg-2 col-md-3 col-6">
+        <div class="footer-heading">Company</div>
+        <a href="about.html" class="footer-link">About Us</a>
+        <a href="contact.html" class="footer-link">Contact</a>
+        <a href="#" class="footer-link">Blog</a>
+      </div>
+      <div class="col-lg-2 col-md-3 col-6">
+        <div class="footer-heading">Legal</div>
+        <a href="#" class="footer-link">Privacy Policy</a>
+        <a href="#" class="footer-link">Terms of Use</a>
+        <a href="#" class="footer-link">Cookie Policy</a>
+      </div>
+      <div class="col-lg-2 col-md-3 col-6">
+        <div class="footer-heading">Help</div>
+        <a href="#faq" class="footer-link">FAQ</a>
+        <a href="contact.html" class="footer-link">Support</a>
+        <a href="https://aistudio.google.com" target="_blank" class="footer-link">Get API Key ↗</a>
+      </div>
+    </div>
+    <hr class="footer-divider">
+             <div style="text-align: center;">© copy 2026 <a href="https://ts-developers.com/terms/copyrights">TS-Developers.com</a> <span id="copyYear"></span> <a href="https://ts-developers.com/profile/obaidullah-faisal" class="text-light">|ObaidUllah Faisal</a></div>
+
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generate Image – PixelMind AI</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+      <link rel="shortcut icon" type="image/ico" href="https://ts-developers.com/img/icon/logo.png" />
+
+</head>
+<body>
+
+<nav class="navbar-custom">
+  <div class="container d-flex align-items-center justify-content-between">
+    <a href="index.html" class="navbar-brand-custom">
+        <div class="profile_circle">
+            <img src="https://ts-developers.com/storage/user/profile_photos/1773334193_69b2eeb1ac4c2.jpg" alt="profile-image" class="img-fluid" />
+        </div>
+    </a>
+    <button class="navbar-toggler-custom d-lg-none">☰</button>
+    <ul class="navbar-menu d-none d-lg-flex gap-1">
+      <li><a href="index.html" class="nav-link-custom">Home</a></li>
+      <li><a href="generate.html" class="nav-link-custom active">Generate</a></li>
+      <li><a href="gallery.html" class="nav-link-custom">Gallery</a></li>
+      <li><a href="about.html" class="nav-link-custom">About</a></li>
+      <li><a href="contact.html" class="nav-link-custom">Contact</a></li>
+      <li><a href="dashboard.html" class="nav-link-custom">Dashboard</a></li>
+    </ul>
+    <div class="d-flex align-items-center gap-2">
+      <button class="dark-toggle"></button>
+      <a href="login.html" class="btn-outline-custom d-none d-md-inline-flex" style="padding:8px 20px;font-size:.85rem">Login</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-content">
+    <h1>✦ <span class="gradient-text">Generate</span> Your Image</h1>
+    <div class="breadcrumb-custom"><a href="index.html">Home</a><span class="breadcrumb-sep">›</span><span>Generate</span></div>
+  </div>
+</div>
+
+<section class="generate-section">
+  <div class="container">
+    <div class="row g-4">
+
+      <!-- LEFT: Controls -->
+      <div class="col-lg-5">
+        <div class="glass-card generate-card">
+          <h5 style="font-weight:700;margin-bottom:20px">⚙️ Image Settings</h5>
+
+          <!-- API Key Box -->
+          <div class="api-key-box">
+            <label>🔑 Your Gemini API Key</label>
+            <div class="api-key-input-wrap">
+              <input type="password" id="apiKeyInput" class="api-key-input" placeholder="AIzaSy... paste your key here">
+              <button id="apiKeySaveBtn" class="api-key-save-btn">Save Key</button>
+            </div>
+            <div id="apiKeyStatus" class="api-key-status">No key saved yet — <a href="https://aistudio.google.com" target="_blank" style="color:#FBBF24">Get free key ↗</a></div>
+          </div>
+
+          <!-- Daily Limit UI -->
+          <div class="daily-limit-bar">
+            <div class="daily-limit-top">
+              <span>Today's Generations</span>
+              <span class="daily-limit-count" id="dailyCount">0/10</span>
+            </div>
+            <div class="progress-track"><div class="progress-fill" id="dailyFill" style="width:0%"></div></div>
+            <div class="limit-note">ℹ️ Actual limit depends on your Gemini API quota (Free: ~1500/day)</div>
+          </div>
+
+          <!-- Prompt -->
+          <div class="mb-3">
+            <label class="form-label-custom">Image Prompt *</label>
+            <textarea id="promptInput" class="form-control-custom" rows="4" maxlength="500"
+              placeholder="Describe your image... e.g. A mystical forest with glowing mushrooms, magical atmosphere, vibrant colors, 4K detailed"></textarea>
+            <div class="char-counter">0/500</div>
+          </div>
+
+          <!-- Suggestions -->
+          <div class="mb-3">
+            <label class="form-label-custom">Quick Suggestions</label>
+            <div class="prompt-suggestions">
+              <span class="suggestion-chip">Futuristic city</span>
+              <span class="suggestion-chip">Fantasy dragon</span>
+              <span class="suggestion-chip">Anime portrait</span>
+              <span class="suggestion-chip">Space galaxy</span>
+              <span class="suggestion-chip">Cyberpunk street</span>
+              <span class="suggestion-chip">Ocean sunset</span>
+              <span class="suggestion-chip">Magic forest</span>
+              <span class="suggestion-chip">Abstract art</span>
+            </div>
+          </div>
+
+          <!-- Style -->
+          <div class="mb-3">
+            <label class="form-label-custom">Art Style</label>
+            <select id="styleSelect" class="form-select-custom">
+              <option value="Realistic photorealistic">🎯 Realistic / Photorealistic</option>
+              <option value="Anime manga">🎌 Anime / Manga</option>
+              <option value="3D render">🎲 3D Render</option>
+              <option value="Digital art">🎨 Digital Art</option>
+              <option value="Oil painting">🖌️ Oil Painting</option>
+              <option value="Watercolor">💧 Watercolor</option>
+              <option value="Pencil sketch">✏️ Pencil Sketch</option>
+              <option value="Cyberpunk neon">🤖 Cyberpunk / Neon</option>
+            </select>
+          </div>
+
+          <!-- Size -->
+          <div class="mb-4">
+            <label class="form-label-custom">Image Size (hint for AI)</label>
+            <div class="size-options">
+              <div class="size-option" data-size="512x512">512×512</div>
+              <div class="size-option active" data-size="1024x1024">1024×1024</div>
+              <div class="size-option" data-size="portrait 9:16">Portrait</div>
+              <div class="size-option" data-size="landscape 16:9">Landscape</div>
+            </div>
+          </div>
+
+          <!-- Generate Button -->
+          <button class="generate-btn ripple" id="generateBtn">
+            <span>✦</span><span>Generate Image</span>
+          </button>
+          <p style="font-size:.72rem;color:var(--text-muted);text-align:center;margin-top:10px">
+            Press <kbd style="background:var(--bg3);padding:2px 6px;border-radius:4px;font-size:.68rem">Ctrl+Enter</kbd> to generate quickly
+          </p>
+        </div>
+
+        <!-- Tips Card -->
+        <div class="glass-card mt-3" style="padding:20px">
+          <h6 style="font-size:.88rem;font-weight:700;margin-bottom:12px">💡 Prompt Tips for Better Results</h6>
+          <ul style="color:var(--text-muted);font-size:.8rem;line-height:2;padding-left:16px">
+            <li>Be specific: lighting, mood, colors, angle</li>
+            <li>Add adjectives: "vibrant", "moody", "epic"</li>
+            <li>Mention camera: "close-up", "wide shot", "aerial"</li>
+            <li>Quality tags: "4K", "ultra detailed", "HDR"</li>
+            <li>Example: <em>"Golden retriever puppy in autumn leaves, warm bokeh, 4K"</em></li>
+          </ul>
+        </div>
+
+        <!-- API Info -->
+        <div class="glass-card mt-3" style="padding:18px;background:rgba(16,185,129,.04);border-color:rgba(16,185,129,.2)">
+          <h6 style="font-size:.82rem;font-weight:700;color:#10B981;margin-bottom:8px">🔒 Your Privacy</h6>
+          <p style="font-size:.78rem;color:var(--text-muted);margin:0;line-height:1.6">Your API key is stored only in your browser's localStorage. It never leaves your device or gets sent to any server. Gemini API is called directly from your browser.</p>
+        </div>
+      </div>
+
+      <!-- RIGHT: Result -->
+      <div class="col-lg-7">
+        <div class="glass-card generate-card">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5 style="font-weight:700;margin:0">🖼️ Generated Image</h5>
+            <span style="font-size:.75rem;color:var(--text-muted)" id="genStatus">Ready to generate</span>
+          </div>
+
+          <div class="image-result-area" id="imageResultArea">
+            <div class="loader-overlay hidden" id="loaderOverlay">
+              <div class="spinner-custom"></div>
+              <div class="loader-text" id="loaderText">Creating your masterpiece...</div>
+            </div>
+            <div class="empty-icon">🎨</div>
+            <p style="margin:0;font-weight:500">Your image will appear here</p>
+            <p style="font-size:.8rem;color:var(--text-muted);margin:0">Enter a prompt and click Generate</p>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="image-actions" id="imageActions" style="display:none">
+            <button class="action-btn download" id="downloadBtn">⬇️ Download HD</button>
+            <button class="action-btn" id="copyPromptBtn">📋 Copy Prompt</button>
+            <button class="action-btn" id="regenerateBtn">🔄 Regenerate</button>
+            <button class="action-btn" id="saveBtn">💾 Save</button>
+          </div>
+
+          <!-- Image Info -->
+          <div id="imageInfo" style="display:none;margin-top:12px;padding:12px;background:var(--glass);border-radius:10px;border:1px solid var(--glass-border)">
+            <div class="row g-2" style="font-size:.75rem;color:var(--text-muted)">
+              <div class="col-4"><span style="font-weight:600;color:var(--text)">Style:</span><br><span id="infoStyle">-</span></div>
+              <div class="col-4"><span style="font-weight:600;color:var(--text)">Size:</span><br><span id="infoSize">-</span></div>
+              <div class="col-4"><span style="font-weight:600;color:var(--text)">Generated:</span><br><span id="infoTime">-</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Generations -->
+        <div class="glass-card mt-3" style="padding:20px">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h6 style="font-size:.88rem;font-weight:700;margin:0">🕐 Recent Generations</h6>
+            <a href="gallery.html" style="font-size:.78rem;color:var(--primary)">View all →</a>
+          </div>
+          <div id="recentGrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(90px,1fr));gap:10px"></div>
+          <div id="noRecent" style="text-align:center;color:var(--text-muted);font-size:.8rem;padding:20px 0">No recent images yet — start generating!</div>
+        </div>
+
+        <!-- How to Get API Key -->
+        <div class="glass-card mt-3" style="padding:20px">
+          <h6 style="font-size:.88rem;font-weight:700;margin-bottom:12px">🔑 How to Get Your Free Gemini API Key</h6>
+          <ol style="color:var(--text-muted);font-size:.8rem;line-height:1.9;padding-left:16px">
+            <li>Go to <a href="https://aistudio.google.com" target="_blank" style="color:var(--primary)">Google AI Studio ↗</a></li>
+            <li>Sign in with your Google account</li>
+            <li>Click <strong style="color:var(--text)">"Get API Key"</strong></li>
+            <li>Click <strong style="color:var(--text)">"Create API Key"</strong></li>
+            <li>Copy the key (starts with "AIza...")</li>
+            <li>Paste it in the API Key box above and click <strong style="color:var(--text)">Save Key</strong></li>
+          </ol>
+          <div style="background:rgba(0,217,255,.06);border:1px solid rgba(0,217,255,.2);border-radius:8px;padding:10px 14px;font-size:.78rem;color:var(--accent);margin-top:10px">
+            ✓ Free tier: ~15 images/minute · 1500 images/day · No credit card needed
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer" style="padding:30px 0">
+       <div style="text-align: center;">© copy 2026 <a href="https://ts-developers.com/terms/copyrights">TS-Developers.com</a> <span id="copyYear"></span> <a href="https://ts-developers.com/profile/obaidullah-faisal" class="text-light">|ObaidUllah Faisal</a></div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/script.js"></script>
+<script>
+document.addEventListener('imageGenerated', (e) => {
+  const { style, size } = e.detail;
+  document.querySelector('#infoStyle').textContent = style;
+  document.querySelector('#infoSize').textContent = size;
+  document.querySelector('#imageInfo').style.display = 'block';
+});
+</script>
+</body>
+</html>

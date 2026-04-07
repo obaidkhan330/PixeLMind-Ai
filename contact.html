@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact – PixelMind AI</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+      <link rel="shortcut icon" type="image/ico" href="https://ts-developers.com/img/icon/logo.png" />
+
+</head>
+<body>
+
+<nav class="navbar-custom">
+  <div class="container d-flex align-items-center justify-content-between">
+    <a href="index.html" class="navbar-brand-custom">
+        <div class="profile_circle">
+            <img src="https://ts-developers.com/storage/user/profile_photos/1773334193_69b2eeb1ac4c2.jpg" alt="profile-image" class="img-fluid" />
+        </div>
+    </a>
+    <button class="navbar-toggler-custom d-lg-none">☰</button>
+    <ul class="navbar-menu d-none d-lg-flex gap-1">
+      <li><a href="index.html" class="nav-link-custom">Home</a></li>
+      <li><a href="generate.html" class="nav-link-custom">Generate</a></li>
+      <li><a href="gallery.html" class="nav-link-custom">Gallery</a></li>
+      <li><a href="about.html" class="nav-link-custom">About</a></li>
+      <li><a href="contact.html" class="nav-link-custom active">Contact</a></li>
+      <li><a href="dashboard.html" class="nav-link-custom">Dashboard</a></li>
+    </ul>
+    <div class="d-flex align-items-center gap-2"><button class="dark-toggle"></button></div>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-content">
+    <h1>📬 <span class="gradient-text">Contact Us</span></h1>
+    <div class="breadcrumb-custom"><a href="index.html">Home</a><span class="breadcrumb-sep">›</span><span>Contact</span></div>
+  </div>
+</div>
+
+<section class="contact-section">
+  <div class="container">
+    <div class="row g-4">
+      <!-- Contact Info -->
+      <div class="col-lg-4">
+        <div class="glass-card h-100" style="padding:32px">
+          <h5 style="font-weight:700;margin-bottom:24px">Get in Touch</h5>
+          <div class="contact-info-item">
+            <div class="contact-icon">📧</div>
+            <div><h6>Email</h6><p>hello@pixelmind.ai</p></div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-icon">💬</div>
+            <div><h6>Discord</h6><p>discord.gg/pixelmindai</p></div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-icon">🐦</div>
+            <div><h6>Twitter / X</h6><p>@pixelmindai</p></div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-icon">📍</div>
+            <div><h6>Location</h6><p>San Francisco, CA, USA</p></div>
+          </div>
+          <hr style="border-color:var(--glass-border);margin:20px 0">
+          <h6 style="font-weight:700;margin-bottom:14px;font-size:.88rem">Follow Us</h6>
+          <div class="social-links">
+            <a href="#" class="social-btn">𝕏</a>
+            <a href="#" class="social-btn">📷</a>
+            <a href="#" class="social-btn">💬</a>
+            <a href="#" class="social-btn">⌨</a>
+          </div>
+          <div class="map-container mt-4">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100939.98555098464!2d-122.50764016833296!3d37.75781499657613!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80859a6d00690021%3A0x4a501367f076adff!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1699999999999!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="col-lg-8">
+        <div class="glass-card" style="padding:36px">
+          <h5 style="font-weight:700;margin-bottom:24px">✉️ Send a Message</h5>
+          <form data-validate data-success="Message sent! We'll get back to you within 24 hours. ✓">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label-custom">Full Name *</label>
+                <input type="text" class="form-control-custom" placeholder="Your name" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label-custom">Email Address *</label>
+                <input type="email" class="form-control-custom" placeholder="your@email.com" required>
+              </div>
+              <div class="col-12">
+                <label class="form-label-custom">Subject *</label>
+                <select class="form-select-custom" required>
+                  <option value="">Select a topic...</option>
+                  <option>API Key Help</option>
+                  <option>Image Generation Issue</option>
+                  <option>Feature Request</option>
+                  <option>Bug Report</option>
+                  <option>General Inquiry</option>
+                  <option>Partnership</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <label class="form-label-custom">Message *</label>
+                <textarea class="form-control-custom" rows="6" placeholder="Tell us how we can help you..." required></textarea>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn-primary-custom ripple"><span>📬</span><span>Send Message</span></button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- FAQ Quick Links -->
+        <div class="glass-card mt-4" style="padding:28px">
+          <h6 style="font-weight:700;margin-bottom:16px">🔍 Quick Help</h6>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div style="background:var(--glass);border:1px solid var(--glass-border);border-radius:10px;padding:14px">
+                <div style="font-size:.88rem;font-weight:600;margin-bottom:4px">🔑 API Key Issues?</div>
+                <div style="font-size:.78rem;color:var(--text-muted);line-height:1.5">Get your free key at <a href="https://aistudio.google.com" target="_blank" style="color:var(--primary)">Google AI Studio ↗</a></div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div style="background:var(--glass);border:1px solid var(--glass-border);border-radius:10px;padding:14px">
+                <div style="font-size:.88rem;font-weight:600;margin-bottom:4px">❓ General FAQ</div>
+                <div style="font-size:.78rem;color:var(--text-muted);line-height:1.5"><a href="index.html#faq" style="color:var(--primary)">View our FAQ section ↗</a> for common answers</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer" style="padding:30px 0">
+       <div style="text-align: center;">© copy 2026 <a href="https://ts-developers.com/terms/copyrights">TS-Developers.com</a> <span id="copyYear"></span> <a href="https://ts-developers.com/profile/obaidullah-faisal" class="text-light">|ObaidUllah Faisal</a></div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery – PixelMind AI</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+      <link rel="shortcut icon" type="image/ico" href="https://ts-developers.com/img/icon/logo.png" />
+
+</head>
+<body>
+
+<nav class="navbar-custom">
+  <div class="container d-flex align-items-center justify-content-between">
+    <a href="index.html" class="navbar-brand-custom">
+        <div class="profile_circle">
+            <img src="https://ts-developers.com/storage/user/profile_photos/1773334193_69b2eeb1ac4c2.jpg" alt="profile-image" class="img-fluid" />
+        </div>
+    </a>
+    <button class="navbar-toggler-custom d-lg-none">☰</button>
+    <ul class="navbar-menu d-none d-lg-flex gap-1">
+      <li><a href="index.html" class="nav-link-custom">Home</a></li>
+      <li><a href="generate.html" class="nav-link-custom">Generate</a></li>
+      <li><a href="gallery.html" class="nav-link-custom active">Gallery</a></li>
+      <li><a href="about.html" class="nav-link-custom">About</a></li>
+      <li><a href="contact.html" class="nav-link-custom">Contact</a></li>
+      <li><a href="dashboard.html" class="nav-link-custom">Dashboard</a></li>
+    </ul>
+    <div class="d-flex align-items-center gap-2">
+      <button class="dark-toggle"></button>
+      <a href="generate.html" class="btn-primary-custom ripple d-none d-md-inline-flex" style="padding:8px 20px;font-size:.85rem"><span>✦ Generate</span></a>
+    </div>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-content">
+    <h1>🖼️ <span class="gradient-text">Image Gallery</span></h1>
+    <div class="breadcrumb-custom"><a href="index.html">Home</a><span class="breadcrumb-sep">›</span><span>Gallery</span></div>
+    <p style="color:var(--text-muted);font-size:.88rem;margin-top:8px">Your generated images + sample showcase images</p>
+  </div>
+</div>
+
+<section class="gallery-section">
+  <div class="container">
+
+    <!-- Your Images Section -->
+    <div class="mb-4 reveal">
+      <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
+        <h5 style="font-weight:700;margin:0">✦ Your Generated Images</h5>
+        <a href="generate.html" class="btn-primary-custom ripple" style="padding:8px 20px;font-size:.82rem"><span>✦ Generate New</span></a>
+      </div>
+      <div class="masonry-grid" id="userGeneratedGrid">
+        <!-- Loaded by JS from localStorage -->
+        <div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--text-muted)">
+          <div style="font-size:2.5rem;opacity:.3;margin-bottom:12px">🎨</div>
+          <p>No images yet — <a href="generate.html" style="color:var(--primary)">generate your first!</a></p>
+        </div>
+      </div>
+    </div>
+
+    <hr style="border-color:var(--glass-border);margin:40px 0">
+
+    <!-- Sample Showcase -->
+    <div class="text-center mb-4 reveal">
+      <div class="section-tag">✦ Sample Showcase</div>
+      <h4 style="margin-top:10px">What PixelMind AI Can <span class="gradient-text">Create</span></h4>
+    </div>
+
+    <!-- Filters -->
+    <div class="gallery-filters reveal">
+      <button class="filter-btn active" data-filter="all">✦ All</button>
+      <button class="filter-btn" data-filter="realistic">📷 Realistic</button>
+      <button class="filter-btn" data-filter="anime">🎌 Anime</button>
+      <button class="filter-btn" data-filter="3d">🎲 3D Art</button>
+      <button class="filter-btn" data-filter="digital">🎨 Digital Art</button>
+      <button class="filter-btn" data-filter="fantasy">✨ Fantasy</button>
+      <button class="filter-btn" data-filter="scifi">🚀 Sci-Fi</button>
+    </div>
+
+    <!-- Masonry Grid (Demo) -->
+    <div class="masonry-grid" id="galleryGrid">
+      <div class="masonry-item reveal" data-category="scifi"><div class="masonry-placeholder" style="height:280px"><span style="font-size:3rem">🌆</span><span>Futuristic City</span></div><div class="masonry-overlay"><span style="font-weight:600;font-size:.82rem;color:#fff">Cyberpunk Metropolis</span><br><span style="font-size:.72rem;color:rgba(255,255,255,.7)">Sci-Fi · Generate similar →</span></div></div>
+      <div class="masonry-item reveal" data-category="fantasy"><div class="masonry-placeholder" style="height:340px"><span style="font-size:3rem">🐉</span><span>Fantasy Dragon</span></div><div class="masonry-overlay"><span style="font-weight:600;font-size:.82rem;color:#fff">Ancient Dragon</span><br><span style="font-size:.72rem;color:rgba(255,255,255,.7)">Fantasy · Generate similar →</span></div></div>
+      <div class="masonry-item reveal" data-category="anime"><div class="masonry-placeholder" style="height:260px"><span style="font-size:3rem">🌸</span><span>Anime Portrait</span></div><div class="masonry-overlay"><span style="font-weight:600;font-size:.82rem;color:#fff">Cherry Blossom</span><br><span style="font-size:.72rem;color:rgba(255,255,255,.7)">Anime · Generate similar →</span></div></div>
+      <div class="masonry-item reveal" data-category="scifi"><div class="masonry-placeholder" style="height:300px"><span style="font-size:3rem">🚀</span><span>Space Explorer</span></div><div class="masonry-overlay"><span style="font-weight:600;font-size:.82rem;color:#fff">Into the Nebula</span><br><span style="font-size:.72rem;color:rgba(255,255,255,.7)">Sci-Fi · Generate similar →</span></div></div>
+      <div class="masonry-item reveal" data-category="realistic"><div class="masonry-placeholder" style="height:260px"><span style="font-size:3rem">🏔️</span><span>Mountain Vista</span></div><div class="masonry-overlay"><span style="font-weight:600;font-size:.82rem;color:#fff">Golden Hour Peaks</span><br><span style="font-size:.72rem;color:rgba(255,255,255,.7)">Realistic · Generate similar →</span></div></div>
+      <div class="masonry-item reveal" data-category="digital"><div class="masonry-placeholder" style="height:320px"><span style="font-size:3rem">🎨</span><span>Abstract Art</span></div><div class="masonry-overlay"><span style="font-weight:600;font-size:.82rem;color:#fff">Digital Cosmos</span><br><span style="font-size:.72rem;color:rgba(255,255,255,.7)">Digital Art · Generate similar →</span></div></div>
+      <div class="masonry-item reveal" data-category="scifi"><div class="masonry-placeholder" style="height:280px"><span style="font-size:3rem">🤖</span><span>Cyberpunk Robot</span></div><div class="masonry-overlay"><span style="font-weight:600;font-size:.82rem;color:#fff">Android Warrior</span><br><span style="font-size:.72rem;color:rgba(255,255,255,.7)">Sci-Fi · Generate similar →</span></div></div>
+      <div class="masonry-item reveal" data-category="fantasy"><div class="masonry-placeholder" style="height:350px"><span style="font-size:3rem">🧙</span><span>Magic Wizard</span></div><div class="masonry-overlay"><span style="font-weight:600;font-size:.82rem;color:#fff">Ancient Sorcerer</span><br><span style="font-size:.72rem;color:rgba(255,255,255,.7)">Fantasy · Generate similar →</span></div></div>
+      <div class="masonry-item reveal" data-category="realistic"><div class="masonry-placeholder" style="height:240px"><span style="font-size:3rem">🌊</span><span>Ocean Storm</span></div><div class="masonry-overlay"><span style="font-weight:600;font-size:.82rem;color:#fff">Raging Seas</span><br><span style="font-size:.72rem;color:rgba(255,255,255,.7)">Realistic · Generate similar →</span></div></div>
+      <div class="masonry-item reveal" data-category="anime"><div class="masonry-placeholder" style="height:300px"><span style="font-size:3rem">⚔️</span><span>Anime Warrior</span></div><div class="masonry-overlay"><span style="font-weight:600;font-size:.82rem;color:#fff">Samurai Spirit</span><br><span style="font-size:.72rem;color:rgba(255,255,255,.7)">Anime · Generate similar →</span></div></div>
+      <div class="masonry-item reveal" data-category="3d"><div class="masonry-placeholder" style="height:260px"><span style="font-size:3rem">💎</span><span>3D Crystal</span></div><div class="masonry-overlay"><span style="font-weight:600;font-size:.82rem;color:#fff">Crystal Formation</span><br><span style="font-size:.72rem;color:rgba(255,255,255,.7)">3D Art · Generate similar →</span></div></div>
+      <div class="masonry-item reveal" data-category="digital"><div class="masonry-placeholder" style="height:310px"><span style="font-size:3rem">🌌</span><span>Digital Galaxy</span></div><div class="masonry-overlay"><span style="font-weight:600;font-size:.82rem;color:#fff">Cosmic Dreams</span><br><span style="font-size:.72rem;color:rgba(255,255,255,.7)">Digital Art · Generate similar →</span></div></div>
+    </div>
+
+    <div class="text-center mt-5 reveal">
+      <a href="generate.html" class="btn-primary-custom ripple"><span>✦</span><span>Create Your Own Images</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <img src="" alt="Preview" class="lightbox-img" id="lightboxImg" style="display:none">
+  <button class="lightbox-close">✕</button>
+  <div class="lightbox-actions">
+    <button id="lightboxDownload">⬇️ Download</button>
+    <button onclick="document.getElementById('lightbox').classList.remove('active')">✕ Close</button>
+  </div>
+</div>
+
+<footer class="footer" style="padding:30px 0">
+       <div style="text-align: center;">© copy 2026 <a href="https://ts-developers.com/terms/copyrights">TS-Developers.com</a> <span id="copyYear"></span> <a href="https://ts-developers.com/profile/obaidullah-faisal" class="text-light">|ObaidUllah Faisal</a></div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/script.js"></script>
+<script>
+// Handle demo card clicks (no real image — prompt to generate)
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('#galleryGrid .masonry-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const title = item.querySelector('.masonry-overlay span')?.textContent || 'AI Image';
+      const icon = item.querySelector('.masonry-placeholder span')?.textContent || '🖼️';
+      const lightbox = document.getElementById('lightbox');
+      lightbox.innerHTML = `
+        <div style="text-align:center;color:#fff;padding:40px;max-width:500px">
+          <div style="font-size:5rem;margin-bottom:20px">${icon}</div>
+          <h3 style="margin-bottom:8px">${title}</h3>
+          <p style="color:rgba(255,255,255,.6);font-size:.9rem;margin-bottom:20px">This is a sample showcase. Generate your own version!</p>
+          <a href="generate.html" class="btn-primary-custom ripple" style="display:inline-flex"><span>✦ Generate Similar</span></a>
+        </div>
+        <button class="lightbox-close" style="position:fixed;top:20px;right:22px;background:rgba(255,255,255,.1);border:none;color:#fff;font-size:1.4rem;width:42px;height:42px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center">✕</button>
+      `;
+      lightbox.classList.add('active');
+      lightbox.querySelector('.lightbox-close').onclick = () => lightbox.classList.remove('active');
+    });
+  });
+  document.addEventListener('keydown', e => { if(e.key==='Escape') document.getElementById('lightbox')?.classList.remove('active'); });
+  document.getElementById('lightbox')?.addEventListener('click', e => { if(e.target.id==='lightbox') e.target.classList.remove('active'); });
+
+  // Re-init gallery page for user images
+  initGalleryPage();
+
+  // User image lightbox
+  document.addEventListener('click', e => {
+    const item = e.target.closest('#userGeneratedGrid .masonry-item[data-src]');
+    if (!item) return;
+    const lightbox = document.getElementById('lightbox');
+    const src = item.dataset.src;
+    const prompt = item.dataset.prompt || 'AI Generated';
+    lightbox.innerHTML = `
+      <img src="${src}" style="max-width:90vw;max-height:80vh;border-radius:16px;object-fit:contain" alt="${prompt}">
+      <button class="lightbox-close" style="position:fixed;top:20px;right:22px;background:rgba(255,255,255,.1);border:none;color:#fff;font-size:1.4rem;width:42px;height:42px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center">✕</button>
+      <div style="position:fixed;bottom:24px;display:flex;gap:10px">
+        <button onclick="downloadImage('${src}','${prompt.slice(0,30)}')" style="padding:9px 22px;border-radius:50px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.1);color:#fff;font-family:inherit;font-size:.85rem;font-weight:600;cursor:pointer">⬇️ Download</button>
+        <button onclick="document.getElementById('lightbox').classList.remove('active')" style="padding:9px 22px;border-radius:50px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.1);color:#fff;font-family:inherit;font-size:.85rem;font-weight:600;cursor:pointer">✕ Close</button>
+      </div>
+    `;
+    lightbox.classList.add('active');
+    lightbox.querySelector('.lightbox-close').onclick = () => lightbox.classList.remove('active');
+  });
+});
+</script>
+</body>
+</html>

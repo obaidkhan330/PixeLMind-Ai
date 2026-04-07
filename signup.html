@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up – PixelMind AI</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+      <link rel="shortcut icon" type="image/ico" href="https://ts-developers.com/img/icon/logo.png" />
+
+</head>
+<body>
+
+<div class="auth-bg" style="position:fixed;inset:0"></div>
+
+<div style="position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column">
+  <nav class="navbar-custom">
+    <div class="container d-flex align-items-center justify-content-between">
+      <a href="index.html" class="navbar-brand-custom">
+        <div class="profile_circle">
+          <img src="https://ts-developers.com/storage/user/profile_photos/1773334193_69b2eeb1ac4c2.jpg" alt="profile-image" class="img-fluid" />
+        </div>
+      </a>
+      <div class="d-flex align-items-center gap-2">
+        <button class="dark-toggle"></button>
+        <span style="font-size:.85rem;color:var(--text-muted)">Have account?</span>
+        <a href="login.html" class="btn-outline-custom" style="padding:8px 20px;font-size:.85rem">Login</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="auth-section" style="position:relative;z-index:2">
+    <div class="container">
+      <div class="auth-card glass-card">
+        <div class="auth-logo">
+          <div class="logo-icon">✦</div>
+          <span class="gradient-text">PixelMind AI</span>
+        </div>
+        <h2 class="auth-title">Create Free Account</h2>
+        <p class="auth-subtitle">Join 10,000+ creators — completely free, always</p>
+
+        <div style="background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.25);border-radius:10px;padding:12px 16px;margin-bottom:20px;font-size:.82rem;color:#10B981;text-align:center">
+          ✓ 100% Free · ✓ No credit card · ✓ No limits from us
+        </div>
+
+        <div class="social-auth mb-3">
+          <button class="social-auth-btn" onclick="showToast('Google signup coming soon!','info')">🔵 Sign up with Google</button>
+          <button class="social-auth-btn" onclick="showToast('GitHub signup coming soon!','info')">⚫ Sign up with GitHub</button>
+        </div>
+
+        <div class="auth-divider">or create account with email</div>
+
+        <form data-validate data-success="Account created! Welcome to PixelMind! 🎉" onsubmit="setTimeout(()=>window.location='dashboard.html',1500)">
+          <div class="row g-2 mb-1">
+            <div class="col-6">
+              <div class="input-group-custom">
+                <span class="input-icon">👤</span>
+                <input type="text" class="form-control-custom" placeholder="First name" required style="padding-left:38px">
+              </div>
+            </div>
+            <div class="col-6">
+              <input type="text" class="form-control-custom" placeholder="Last name" required>
+            </div>
+          </div>
+          <div class="input-group-custom">
+            <span class="input-icon">📧</span>
+            <input type="email" class="form-control-custom" placeholder="Email address" required>
+          </div>
+          <div class="input-group-custom">
+            <span class="input-icon">🔒</span>
+            <input type="password" class="form-control-custom" placeholder="Password (min 8 characters)" required>
+            <button type="button" class="password-toggle">👁</button>
+          </div>
+          <div class="input-group-custom">
+            <span class="input-icon">🔑</span>
+            <input type="password" class="form-control-custom" placeholder="Confirm password" required>
+            <button type="button" class="password-toggle">👁</button>
+          </div>
+          <label class="form-check-custom mb-3">
+            <input type="checkbox" required> I agree to the <a href="#" class="auth-link">Terms of Service</a> and <a href="#" class="auth-link">Privacy Policy</a>
+          </label>
+          <button type="submit" class="btn-primary-custom ripple w-100 justify-content-center"><span>🚀</span><span>Create Free Account</span></button>
+        </form>
+
+        <div style="text-align:center;margin-top:20px;font-size:.85rem;color:var(--text-muted)">
+          Already have an account? <a href="login.html" class="auth-link">Sign in →</a>
+        </div>
+
+        <div style="margin-top:16px;padding:12px;background:var(--glass);border:1px solid var(--glass-border);border-radius:9px;font-size:.78rem;color:var(--text-muted);text-align:center">
+          💡 You can generate images without signing up! Go to the <a href="generate.html" style="color:var(--primary)">Generate page</a> directly.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/script.js"></script>
+</body>
+</html>

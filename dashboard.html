@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard – PixelMind AI</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+      <link rel="shortcut icon" type="image/ico" href="https://ts-developers.com/img/icon/logo.png" />
+
+</head>
+<body>
+
+<nav class="navbar-custom" style="position:sticky;top:0">
+  <div class="container-fluid d-flex align-items-center justify-content-between px-4">
+    <a href="index.html" class="navbar-brand-custom">
+        <div class="profile_circle">
+            <img src="https://ts-developers.com/storage/user/profile_photos/1773334193_69b2eeb1ac4c2.jpg" alt="profile-image" class="img-fluid" />
+        </div>
+    </a>
+    <div class="d-flex align-items-center gap-3">
+      <span style="font-size:.85rem;color:var(--text-muted)" class="d-none d-md-block">Welcome back, <strong style="color:var(--text)" id="welcomeName">Creator!</strong></span>
+      <button class="dark-toggle"></button>
+      <a href="profile.html" style="width:36px;height:36px;background:linear-gradient(135deg,var(--primary),var(--accent));border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:.9rem;text-decoration:none">U</a>
+    </div>
+  </div>
+</nav>
+
+<div class="dashboard-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-avatar">U</div>
+      <div class="sidebar-username" id="sidebarName">Creator</div>
+      <div class="sidebar-email" id="sidebarEmail">user@example.com</div>
+      <div class="credits-bar-wrapper mt-2">
+        <div style="display:flex;justify-content:space-between;font-size:.7rem;color:var(--text-muted);margin-bottom:4px">
+          <span>Today's Usage</span><span id="creditsText">0/10</span>
+        </div>
+        <div class="credits-bar-track"><div class="credits-bar-fill" style="width:0%" id="creditsBar"></div></div>
+      </div>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="dashboard.html" class="sidebar-nav-item active"><span class="nav-icon">📊</span>Dashboard</a>
+      <a href="generate.html" class="sidebar-nav-item"><span class="nav-icon">✦</span>Generate Image</a>
+      <a href="gallery.html" class="sidebar-nav-item"><span class="nav-icon">🖼️</span>Gallery</a>
+      <hr class="sidebar-divider">
+      <a href="profile.html" class="sidebar-nav-item"><span class="nav-icon">👤</span>Profile</a>
+      <a href="https://aistudio.google.com" target="_blank" class="sidebar-nav-item"><span class="nav-icon">🔑</span>Get API Key ↗</a>
+      <hr class="sidebar-divider">
+      <a href="#" class="sidebar-nav-item" id="clearHistoryBtn"><span class="nav-icon">🗑️</span>Clear History</a>
+      <a href="login.html" class="sidebar-nav-item"><span class="nav-icon">🚪</span>Logout</a>
+    </nav>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="dashboard-main">
+    <div class="dash-header">
+      <h1 class="dash-title">📊 Dashboard</h1>
+      <a href="generate.html" class="btn-primary-custom ripple" style="padding:9px 22px;font-size:.85rem"><span>✦</span><span>New Image</span></a>
+    </div>
+
+    <!-- Stats -->
+    <div class="stat-cards">
+      <div class="glass-card stat-card">
+        <div class="stat-icon">🖼️</div>
+        <div><div class="stat-value" id="generatedCount">0</div><div class="stat-label">Total Generated</div></div>
+      </div>
+      <div class="glass-card stat-card">
+        <div class="stat-icon">💾</div>
+        <div><div class="stat-value" id="savedCount">0</div><div class="stat-label">Saved Images</div></div>
+      </div>
+      <div class="glass-card stat-card">
+        <div class="stat-icon">⬇️</div>
+        <div><div class="stat-value" id="downloadCount">0</div><div class="stat-label">Downloads</div></div>
+      </div>
+      <div class="glass-card stat-card">
+        <div class="stat-icon">🔑</div>
+        <div><div class="stat-value" id="apiStatus">—</div><div class="stat-label">API Key Status</div></div>
+      </div>
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="glass-card mb-4" style="padding:20px">
+      <h6 style="font-weight:700;margin-bottom:14px;font-size:.9rem">⚡ Quick Actions</h6>
+      <div class="d-flex gap-2 flex-wrap">
+        <a href="generate.html" class="action-btn" style="min-width:auto;flex:0 1 auto">✦ Generate New</a>
+        <a href="gallery.html" class="action-btn" style="min-width:auto;flex:0 1 auto">🖼️ View Gallery</a>
+        <a href="https://aistudio.google.com" target="_blank" class="action-btn" style="min-width:auto;flex:0 1 auto">🔑 Get API Key ↗</a>
+        <button class="action-btn" style="min-width:auto;flex:0 1 auto" id="clearHistoryBtn2">🗑️ Clear History</button>
+      </div>
+    </div>
+
+    <!-- API Key Status -->
+    <div class="glass-card mb-4" style="padding:20px" id="apiKeyInfo">
+      <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+        <div>
+          <h6 style="font-weight:700;margin-bottom:4px" id="apiKeyInfoTitle">🔑 Gemini API Key</h6>
+          <p style="font-size:.82rem;color:var(--text-muted);margin:0" id="apiKeyInfoMsg">Add your API key on the Generate page to start creating images.</p>
+        </div>
+        <a href="generate.html" class="btn-primary-custom ripple" style="padding:8px 20px;font-size:.82rem"><span>Go to Generate</span></a>
+      </div>
+    </div>
+
+    <!-- Usage Info -->
+    <div class="glass-card mb-4" style="padding:20px;background:rgba(0,217,255,.03);border-color:rgba(0,217,255,.2)">
+      <div style="font-size:.85rem;line-height:1.7;color:var(--text-muted)">
+        <strong style="color:var(--text)">📊 About Image Limits:</strong> PixelMind AI itself has no limits. Your generation count depends on your Gemini API quota. 
+        <strong style="color:var(--accent)">Free Google Gemini API:</strong> ~15 images/minute, ~1500 images/day. 
+        Upgrade at <a href="https://ai.google.dev" target="_blank" style="color:var(--accent)">Google AI Studio ↗</a> for higher quotas.
+      </div>
+    </div>
+
+    <!-- Image History -->
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h5 style="font-weight:700;margin:0;font-size:1rem">🕐 Generation History</h5>
+      <button class="action-btn" style="min-width:auto;flex:0 1 auto;padding:6px 14px;font-size:.75rem" id="clearHistoryBtn3">Clear All</button>
+    </div>
+
+    <div class="empty-state" id="emptyState">
+      <div class="empty-state-icon">🎨</div>
+      <h5>No images yet</h5>
+      <p>Generate your first AI image to see your history here.</p>
+      <a href="generate.html" class="btn-primary-custom ripple mt-3 d-inline-flex"><span>✦ Generate Now</span></a>
+    </div>
+
+    <div class="history-grid" id="historyGrid"></div>
+  </main>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/script.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // API Key status
+  const apiKey = localStorage.getItem('gemini_api_key');
+  const apiStatusEl = document.querySelector('#apiStatus');
+  const apiKeyInfoTitle = document.querySelector('#apiKeyInfoTitle');
+  const apiKeyInfoMsg = document.querySelector('#apiKeyInfoMsg');
+  if (apiKey) {
+    if (apiStatusEl) apiStatusEl.textContent = '✓ Set';
+    if (apiStatusEl) apiStatusEl.style.color = '#10B981';
+    if (apiKeyInfoTitle) apiKeyInfoTitle.textContent = '🔑 API Key: Active';
+    if (apiKeyInfoMsg) apiKeyInfoMsg.textContent = `Key saved: ${apiKey.slice(0,8)}...${apiKey.slice(-4)} · Ready to generate!`;
+  }
+
+  // Clear buttons
+  ['clearHistoryBtn','clearHistoryBtn2','clearHistoryBtn3'].forEach(id => {
+    document.querySelector('#' + id)?.addEventListener('click', () => {
+      if (!confirm('Clear all image history? This cannot be undone.')) return;
+      localStorage.removeItem('aiImageHistory');
+      initDashboard();
+      showToast('History cleared.', 'info');
+    });
+  });
+});
+</script>
+</body>
+</html>

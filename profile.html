@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile – PixelMind AI</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+      <link rel="shortcut icon" type="image/ico" href="https://ts-developers.com/img/icon/logo.png" />
+
+</head>
+<body>
+
+<nav class="navbar-custom">
+  <div class="container d-flex align-items-center justify-content-between">
+    <a href="index.html" class="navbar-brand-custom">
+        <div class="profile_circle">
+            <img src="https://ts-developers.com/storage/user/profile_photos/1773334193_69b2eeb1ac4c2.jpg" alt="profile-image" class="img-fluid" />
+        </div>
+    </a>
+    <button class="navbar-toggler-custom d-lg-none">☰</button>
+    <ul class="navbar-menu d-none d-lg-flex gap-1">
+      <li><a href="index.html" class="nav-link-custom">Home</a></li>
+      <li><a href="generate.html" class="nav-link-custom">Generate</a></li>
+      <li><a href="gallery.html" class="nav-link-custom">Gallery</a></li>
+      <li><a href="dashboard.html" class="nav-link-custom">Dashboard</a></li>
+    </ul>
+    <div class="d-flex align-items-center gap-2"><button class="dark-toggle"></button></div>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-content">
+    <h1>👤 <span class="gradient-text">My Profile</span></h1>
+    <div class="breadcrumb-custom"><a href="index.html">Home</a><span class="breadcrumb-sep">›</span><a href="dashboard.html">Dashboard</a><span class="breadcrumb-sep">›</span><span>Profile</span></div>
+  </div>
+</div>
+
+<section class="profile-section">
+  <div class="container">
+    <div class="row g-4 justify-content-center">
+      <div class="col-lg-4">
+        <!-- Avatar Card -->
+        <div class="glass-card text-center" style="padding:36px 28px">
+          <div class="profile-avatar-wrapper">
+            <div class="profile-avatar" id="profileAvatarDisplay">U</div>
+            <div class="avatar-edit-btn" onclick="document.querySelector('#avatarInput').click()">✏️</div>
+          </div>
+          <input type="file" id="avatarInput" accept="image/*" style="display:none">
+          <h5 style="font-weight:700;margin-bottom:4px" id="displayName">Creator</h5>
+          <p style="color:var(--text-muted);font-size:.85rem" id="displayEmail">user@example.com</p>
+          <div style="background:var(--glass);border:1px solid var(--glass-border);border-radius:10px;padding:12px;margin-top:16px;text-align:left">
+            <div style="font-size:.78rem;color:var(--text-muted);margin-bottom:6px">Stats</div>
+            <div style="display:flex;justify-content:space-between;font-size:.85rem;margin-bottom:4px">
+              <span>Images Generated</span><strong id="profileStats">0</strong>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:.85rem">
+              <span>API Key</span><strong id="profileApiStatus" style="color:#EF4444">Not set</strong>
+            </div>
+          </div>
+          <a href="dashboard.html" class="btn-outline-custom w-100 mt-3 d-block text-center" style="border-radius:10px">View Dashboard</a>
+        </div>
+      </div>
+
+      <div class="col-lg-8">
+        <!-- Profile Form -->
+        <div class="glass-card" style="padding:32px">
+          <h5 style="font-weight:700;margin-bottom:24px">✏️ Edit Profile</h5>
+          <form id="profileForm">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label-custom">Full Name</label>
+                <input type="text" id="profileName" class="form-control-custom" placeholder="Your name">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label-custom">Email Address</label>
+                <input type="email" id="profileEmail" class="form-control-custom" placeholder="your@email.com">
+              </div>
+              <div class="col-12">
+                <label class="form-label-custom">Bio</label>
+                <textarea id="profileBio" class="form-control-custom" rows="3" placeholder="Tell us about yourself..."></textarea>
+              </div>
+            </div>
+            <button type="submit" class="btn-primary-custom ripple mt-4"><span>💾</span><span>Save Profile</span></button>
+          </form>
+        </div>
+
+        <!-- Gemini API Key -->
+        <div class="glass-card mt-4" style="padding:32px">
+          <h5 style="font-weight:700;margin-bottom:8px">🔑 Gemini API Key</h5>
+          <p style="color:var(--text-muted);font-size:.85rem;margin-bottom:18px">Your API key is stored locally in your browser only. Never shared with us.</p>
+          <div class="api-key-box" style="background:transparent;border:none;padding:0">
+            <div class="api-key-input-wrap">
+              <input type="password" id="apiKeyInput" class="api-key-input" placeholder="AIzaSy...">
+              <button id="apiKeySaveBtn" class="api-key-save-btn">Save Key</button>
+            </div>
+            <div id="apiKeyStatus" class="api-key-status">No key saved yet</div>
+          </div>
+          <div style="margin-top:14px;padding:12px;background:rgba(0,217,255,.05);border:1px solid rgba(0,217,255,.2);border-radius:9px;font-size:.8rem;color:var(--text-muted)">
+            Don't have an API key? <a href="https://aistudio.google.com" target="_blank" style="color:var(--accent)">Get a free Gemini API key ↗</a> from Google AI Studio.
+          </div>
+        </div>
+
+        <!-- Change Password (UI only) -->
+        <div class="glass-card mt-4" style="padding:32px">
+          <h5 style="font-weight:700;margin-bottom:24px">🔒 Change Password</h5>
+          <form data-validate data-success="Password updated! ✓">
+            <div class="mb-3">
+              <label class="form-label-custom">Current Password</label>
+              <div class="input-group-custom">
+                <span class="input-icon">🔒</span>
+                <input type="password" class="form-control-custom" placeholder="Current password" required>
+                <button type="button" class="password-toggle">👁</button>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label-custom">New Password</label>
+              <div class="input-group-custom">
+                <span class="input-icon">🔑</span>
+                <input type="password" class="form-control-custom" placeholder="New password (min 8 chars)" required>
+                <button type="button" class="password-toggle">👁</button>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label-custom">Confirm New Password</label>
+              <div class="input-group-custom">
+                <span class="input-icon">🔑</span>
+                <input type="password" class="form-control-custom" placeholder="Confirm new password" required>
+                <button type="button" class="password-toggle">👁</button>
+              </div>
+            </div>
+            <button type="submit" class="btn-outline-custom"><span>🔒</span><span>Update Password</span></button>
+          </form>
+        </div>
+
+        <!-- Danger Zone -->
+        <div class="glass-card mt-4" style="padding:24px;border-color:rgba(239,68,68,.2);background:rgba(239,68,68,.03)">
+          <h6 style="color:#EF4444;font-weight:700;margin-bottom:12px">⚠️ Danger Zone</h6>
+          <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+            <div>
+              <p style="font-size:.85rem;font-weight:600;margin-bottom:3px">Clear All Data</p>
+              <p style="font-size:.78rem;color:var(--text-muted);margin:0">Remove all images, history, and API key from browser</p>
+            </div>
+            <button onclick="if(confirm('Clear ALL data? This cannot be undone.')){'aiImageHistory,profileData,profileAvatar,gemini_api_key,dailyCount'.split(',').forEach(k=>localStorage.removeItem(k));showToast('All data cleared.','info');setTimeout(()=>location.reload(),1500)}" style="padding:8px 18px;background:transparent;border:1px solid #EF4444;color:#EF4444;border-radius:9px;font-family:inherit;font-size:.82rem;font-weight:600;cursor:pointer;transition:all .3s">Clear All Data</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer" style="padding:30px 0">
+       <div style="text-align: center;">© copy 2026 <a href="https://ts-developers.com/terms/copyrights">TS-Developers.com</a> <span id="copyYear"></span> <a href="https://ts-developers.com/profile/obaidullah-faisal" class="text-light">|ObaidUllah Faisal </a></div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/script.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const profile = JSON.parse(localStorage.getItem('profileData') || '{}');
+  if (profile.name) { document.querySelector('#displayName').textContent = profile.name; }
+  if (profile.email) { document.querySelector('#displayEmail').textContent = profile.email; }
+  const history = JSON.parse(localStorage.getItem('aiImageHistory') || '[]');
+  document.querySelector('#profileStats').textContent = history.length;
+  const apiKey = localStorage.getItem('gemini_api_key');
+  if (apiKey) {
+    const el = document.querySelector('#profileApiStatus');
+    if (el) { el.textContent = '✓ Set'; el.style.color = '#10B981'; }
+  }
+  // Profile form save updates display
+  document.querySelector('#profileForm')?.addEventListener('submit', () => {
+    setTimeout(() => {
+      const p = JSON.parse(localStorage.getItem('profileData') || '{}');
+      if (p.name) document.querySelector('#displayName').textContent = p.name;
+      if (p.email) document.querySelector('#displayEmail').textContent = p.email;
+    }, 100);
+  });
+});
+</script>
+</body>
+</html>

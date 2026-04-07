@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login – PixelMind AI</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+      <link rel="shortcut icon" type="image/ico" href="https://ts-developers.com/img/icon/logo.png" />
+
+</head>
+<body>
+
+<div class="auth-bg" style="position:fixed;inset:0"></div>
+
+<div style="position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column">
+  <nav class="navbar-custom">
+    <div class="container d-flex align-items-center justify-content-between">
+      <a href="index.html" class="navbar-brand-custom">
+   <div class="profile_circle">
+                <img src="https://ts-developers.com/storage/user/profile_photos/1773334193_69b2eeb1ac4c2.jpg" alt="profile-image" class="img-fluid" />
+            </div>
+                  <div class="d-flex align-items-center gap-2">
+        <button class="dark-toggle"></button>
+        <span style="font-size:.85rem;color:var(--text-muted)">No account?</span>
+        <a href="signup.html" class="btn-primary-custom ripple" style="padding:8px 20px;font-size:.85rem"><span>Sign Up Free</span></a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="auth-section" style="position:relative;z-index:2">
+    <div class="container">
+      <div class="auth-card glass-card">
+        <div class="auth-logo">
+          <div class="logo-icon">✦</div>
+          <span class="gradient-text">PixelMind AI</span>
+        </div>
+        <h2 class="auth-title">Welcome Back</h2>
+        <p class="auth-subtitle">Sign in to access your dashboard and history</p>
+
+        <div class="social-auth mb-3">
+          <button class="social-auth-btn" onclick="showToast('Google login coming soon!','info')">🔵 Continue with Google</button>
+          <button class="social-auth-btn" onclick="showToast('GitHub login coming soon!','info')">⚫ Continue with GitHub</button>
+        </div>
+
+        <div class="auth-divider">or sign in with email</div>
+
+        <form data-validate data-success="Logged in successfully! ✓" onsubmit="setTimeout(()=>window.location='dashboard.html',1200)">
+          <div class="input-group-custom">
+            <span class="input-icon">📧</span>
+            <input type="email" class="form-control-custom" placeholder="Email address" required>
+          </div>
+          <div class="input-group-custom">
+            <span class="input-icon">🔒</span>
+            <input type="password" class="form-control-custom" placeholder="Password" required>
+            <button type="button" class="password-toggle">👁</button>
+          </div>
+          <div class="d-flex justify-content-between align-items-center mb-3" style="font-size:.82rem">
+            <label class="form-check-custom"><input type="checkbox"> Remember me</label>
+            <a href="#" class="auth-link" onclick="showToast('Password reset email sent!','info');return false">Forgot password?</a>
+          </div>
+          <button type="submit" class="btn-primary-custom ripple w-100 justify-content-center"><span>🚀</span><span>Sign In</span></button>
+        </form>
+
+        <div style="text-align:center;margin-top:20px;font-size:.85rem;color:var(--text-muted)">
+          Don't have an account? <a href="signup.html" class="auth-link">Create one free →</a>
+        </div>
+
+        <div style="margin-top:16px;padding:12px;background:rgba(0,217,255,.06);border:1px solid rgba(0,217,255,.2);border-radius:9px;font-size:.78rem;color:var(--text-muted);text-align:center">
+          💡 <strong style="color:var(--accent)">No account needed</strong> to generate images! Just add your Gemini API key on the <a href="generate.html" style="color:var(--accent)">Generate page</a>.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/script.js"></script>
+</body>
+</html>
