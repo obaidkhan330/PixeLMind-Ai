@@ -1,6 +1,6 @@
 # PixelMind AI 🎨
 
-**Free AI Image Generator powered by Google Gemini**
+**Free AI Image Generator powered by Ts-Developers**
 
 > No payment. No watermarks. No limits from us. Use your own free Gemini API key.
 
@@ -114,4 +114,4 @@ npm start
 
 ---
 
-© 2025 PixelMind AI · 100% Free · Powered by Google Gemini
+© 2025 PixelMind AI · 100% Free · Powered by ObaidUllah Faisal.
